@@ -1,0 +1,38 @@
+{
+  "permissionsBoundary": {},
+  "roleName": "lambda_s3_exec_role",
+  "policies": [
+    {
+      "document": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "logs:CreateLogGroup",
+              "logs:CreateLogStream",
+              "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:ListBucket",
+              "s3:GetObject",
+              "s3:PutObject"
+            ],
+            "Resource": [
+              "arn:aws:s3:::*"
+            ]
+          }
+        ]
+      },
+      "name": "oneClick_lambda_s3_exec_role_1450157747358",
+      "type": "inline"
+    }
+  ],
+  "trustedEntities": [
+    "lambda.amazonaws.com"
+  ]
+}
